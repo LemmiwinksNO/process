@@ -7,7 +7,8 @@ import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 // Endpoint Modules
-import QmsContainer from '../../qms'
+import Home from '../../home'
+import Qms from '../../qms'
 
 const store = createStore();
 
@@ -17,7 +18,8 @@ const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={QmsContainer}>
+      <Route path="/" component={Home}>
+      	<Route path="qms" component={Qms}></Route>
       </Route>
     </Router>
   </Provider>,
