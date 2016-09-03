@@ -1,21 +1,20 @@
 // Question Management System
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import createStore from '../shared/store';
-import Application from '../shared/app';
-import Qms from './container';
-import { setGames, setHeaders, setNavItems, setTitle } from './duck';
+import { connect } from 'react-redux';
+import QmsContainer from './container';
+import { setGames, setHeaders, setTitle } from './duck';
 import games from './games.json';
 import headers from './headers.json';
 
-// init store
-const store = createStore();
-store.dispatch(setGames(games));
-store.dispatch(setHeaders(headers));
-store.dispatch(setTitle('Admin Tools'))
+const Qms = ({dispatch}) => {
+	dispatch(setGames(games));
+	dispatch(setHeaders(headers));
+	dispatch(setTitle('Admin Tools'));
 
-ReactDOM.render(
-  <Application store={store}><Qms/></Application>,
-  document.getElementById('main')
-)	
+	return <QmsContainer/>
+}
+
+const mapStateToProps = (state) => { return {} }
+
+export default connect(mapStateToProps)(Qms);

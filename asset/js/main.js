@@ -1,1 +1,3 @@
-var QmsModule = require('./qms/index');
+require('./shared/routes/index');
+
+// require('./qms/index');
