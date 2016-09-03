@@ -2,28 +2,32 @@
 // BASE SETUP
 // =============================================================================
 
-var express      = require('express');
-var bodyParser   = require('body-parser');
-var mongoose     = require('mongoose');
-var app          = express();
-var router       = require('./app/routes/index');
-// var staticRouter = require('./app/routes/static');
+const express      = require('express');
+const bodyParser   = require('body-parser');
+const mongoose     = require('mongoose');
+const router       = require('./app/routes/index');
+const compression  = require('compression');
+// const staticRouter = require('./app/routes/static');
+
 
 // configuration ===============================================================
 
 // process.env.MONGOHQ_URL uses the MongoHQ Heroku addon
-// var db_url = process.env.MONGOHQ_URL || 'mongodb://localhost/my_database';
-var db_url = 'mongodb://mark:morals@ds023520.mlab.com:23520/process';
+// const db_url = process.env.MONGOHQ_URL || 'mongodb://localhost/my_database';
+const db_url = 'mongodb://mark:morals@ds023520.mlab.com:23520/process';
 mongoose.connect(db_url);
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Database connection error:'));
 db.once('open', function callback () { console.log('Database connected!'); });
+
+const app = express();
 
 // NOTE: lots to this stuff - https://github.com/expressjs/body-parser
 // let us pull POST content from our HTTP request so that we can do things like create a bear.
 app.use(bodyParser.urlencoded({ extended: true }));  // parse application/x-www-form-urlencoded 
-app.use(bodyParser.json()); // parse application/json 
+app.use(bodyParser.json()); // parse application/json
+app.use(compression());
 
 // Load distribution or development code
 if (process.argv[2] === 'dist') {
@@ -35,7 +39,7 @@ if (process.argv[2] === 'dist') {
 	app.use(express.static(__dirname));	
 }
 
-var port = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 // REGISTER OUR ROUTES -------------------------------
 app.use('/api', router);

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "fundamentals",
+    "label": "Fundamentals",
+    "api": "questions"
+  },
+  {
+    "id": "customer care",
+    "label": "Customer Care",
+    "api": "questions"
+  },
+  {
+    "id": "sales",
+    "label": "Sales",
+    "api": "questions"
+  },
+  {
+    "id": "picture-lightning-round",
+    "label": "Picture Lightning Round",
+    "api": "game-questions"
+  },
+  {
+    "id": "space-cadet",
+    "label": "Phrase Lightning Round / Space Cadet",
+    "api": "game-questions"
+  }
+]

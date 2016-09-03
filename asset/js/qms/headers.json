@@ -1,0 +1,54 @@
+[
+  { 
+    "name": "question_text",
+    "label": "Question" 
+  },
+  {
+    "name": "personality",
+    "label": "Personality",
+    "options":[
+      {"label": "Advisor", "value": "Advisor"},
+      {"label": "Connector", "value": "Connector"},
+      {"label": "Doer", "value": "Doer"},
+      {"label": "Dreamer", "value": "Dreamer"},
+      {"label": "Original", "value": "Original"},
+      {"label": "Organizer", "value": "Organizer"}
+    ]
+  },
+  {
+    "name": "scenario",
+    "label": "Scenario",
+    "options":[
+      {"label": "General Knowledge", "value": "General Knowledge"},
+      {"label": "In the Office", "value": "In the Office"},
+      {"label": "Miscommunication", "value": "Miscommunication"},
+      {"label": "Persuasion", "value": "Persuasion"}
+    ]
+  },
+  {
+    "name": "skill",
+    "label": "Skill",
+    "options":[
+      {"label": "Connect", "value": "Connect"},
+      {"label": "Identify", "value": "Identify"},
+      {"label": "Understand", "value": "Understand"}
+    ]
+  },
+  {
+    "name": "difficulty", 
+    "label": "Difficulty",
+    "options":[
+      {"label": "Easy", "value": "Easy"},
+      {"label": "Medium", "value": "Medium"},
+      {"label": "Hard", "value": "Hard"}
+    ]
+  },
+  {
+    "name": "style",
+    "label": "Style",
+    "options":[
+      {"label": "Multi", "value": "Multi"},
+      {"label": "T/F", "value": "T/F"}
+    ]
+  }
+]

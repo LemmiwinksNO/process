@@ -2,10 +2,10 @@
 // All the routes for our app
 // =============================================================================
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var API = {};
+let API = {};
 API.bears = require('../controllers/bears');
 
 
@@ -17,10 +17,7 @@ router.use(function(req, res, next) {
 });
 
 // test route to make sure everything is working (accessed at GET http://localhost:4000/api)
-router.get('/', function(req, res) {
-  res.json({ message: 'hooray! welcome to our api!' });
-});
-
+router.get('/', (req, res) => { res.json({ message: 'hooray! welcome to our api!' })})
 
 // API ROUTES ==================================================================
 

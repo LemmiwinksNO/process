@@ -1,9 +1,8 @@
 
-var Bear = require('../models/bear');
+const Bear = require('../models/bear');
 
-// Create a bear
 exports.create = function(req, res) {
-  var bear = new Bear();
+  let bear = new Bear();
   bear.name = req.body.name;
 
   bear.save(function(err) {
