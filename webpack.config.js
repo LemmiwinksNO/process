@@ -3,8 +3,9 @@ var rootDir = path.resolve(__dirname);
 
 module.exports = {
   context: rootDir,
+  devtool: 'eval',
   entry: [
-    'babel-polyfill',
+    // 'babel-polyfill',
     './asset/js/main.js'
   ],
   output: {
@@ -17,7 +18,7 @@ module.exports = {
   module: {
   	loaders: [
   		{
-				test: /\.jsx$/,
+				test: /\.jsx?$/,
         include: path.resolve(__dirname, 'asset/js'),
 				loader: 'babel-loader',
 				query: {
