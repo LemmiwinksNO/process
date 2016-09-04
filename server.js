@@ -41,9 +41,24 @@ if (process.argv[2] === 'dist') {
 
 const port = process.env.PORT || 4000;
 
-// REGISTER OUR ROUTES -------------------------------
+// Setup webpack dev middleware ================================================
+
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.dev.js');
+const compiler = webpack(webpackConfig);
+app.use(require('webpack-dev-middleware')(compiler, {
+	noInfo: true,
+	publicPath: webpackConfig.output.publicPath,
+  // stats: { colors: true }
+}));
+
+// REGISTER OUR ROUTES =========================================================
 app.use('/api', router);
 // app.use('/', staticRouter);
+
+// app.get('/', function(req, res) {
+// 	res.sendFile(__dirname + '/index.html');
+// })
 
 
 // START THE SERVER
