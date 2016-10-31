@@ -4,7 +4,8 @@
   "description": "Application applying my daily process.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "start-dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -25,12 +26,14 @@
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.2.4",
     "lodash": "^4.12.0",
+    "material-ui": "^0.16.1",
     "mongoose": "~4.4.12",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0"

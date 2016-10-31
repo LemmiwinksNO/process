@@ -1,3 +1,4 @@
+'use strict';
 
 const Bear = require('../models/bear');
 
